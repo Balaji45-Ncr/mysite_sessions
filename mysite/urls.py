@@ -19,7 +19,8 @@ from django.urls import path
 from webapp import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-   # path('',views.view_for_sessions),
-   path('',views.get_or_create),
-]
+     path('admin/', admin.site.urls),
+     path('',views.view_for_sessions),
+#    path('1/',views.get_or_create),
+#    path('',views.update_or_create),
+ ]

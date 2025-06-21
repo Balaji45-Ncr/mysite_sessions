@@ -1,11 +1,16 @@
 from django.db import models
 
 # Create your models here.
-class choices(models.Model):
-    status_choice=[
-        ('r','raina'),
-        ('d','dhoni'),
-        ('v','virat'),
-    ]
-    name=models.CharField(verbose_name='Cricketer_name',choices=status_choice,default='d',max_length=50)
-    scores=models.IntegerField()
+class Course(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    courses = models.ManyToManyField(Course, related_name="students")
+
+    def __str__(self):
+        return self.name
